@@ -1,0 +1,148 @@
+#!/bin/bash
+echo "$(tput setaf 1)â•”==========================================================â•—"
+arr[0]="
+â–¬â–¬â–¬.â—™.â–¬â–¬â–¬
+â•â–‚â–„â–„â–“â–„â–„â–‚
+â—¢â—¤ â–ˆâ–€â–€â–ˆâ–ˆâ–ˆâ–ˆâ–„â–„â–„â–„â—¢â—¤
+â–ˆâ–„ â–ˆ â–ˆâ–„ â–ˆâ–ˆâ–ˆâ–€â–€â–€â–€â–€â–€â–€â•¬
+â—¥â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤
+â•â•â•©â•â•â•©â•
+â•¬â•â•¬
+â•¬â•â•¬ 
+â•¬â•â•¬ 
+â•¬â•â•¬       TechCampus
+â•¬â•â•¬â˜»/       Linux
+â•¬â•â•¬/â–Œ
+â•¬â•â•¬/ "
+arr[1]="88                                88                              
+88                                88                              
+88                                88                              
+88ddPPYbaf   adPPYYba   _adPPYba_ 88   dd8   adPPYba  8bRdPPYba  
+88P      8a 88      Y8 a8         88  a8   a8P_____88 88P     Y8  
+88       88  adPPPPP88 8b         8888     8PP        88          
+88       88 88      88  8a    aa  8RTYba   8b     aa  88          
+88       88 er8bbdPeY8  erYbbd8f3 88   Y8a   YYbbd88  88    "
+arr[2]="                                                           
+                           .,:cc:,'                           
+                         .llllllllll'                         
+                         llllllllllll.                        
+                         llllllllllll,                        
+             .....       'llllllllll:       .....             
+          .:lllllllc'      .llllll;      .:lllllllc'          
+         .llllllllllll                  'lllllllllll:         
+         cllllllllllll                  lllllllllllll         
+         .lllllllllll;      ..''..      .lllllllllll,         
+           lllllllll'     :llllllllc.     lllllllll.          
+  .,',.       ;cc'      .llllllllllll:      .clc.      .,',.  
+ llllllc                llllllllllllll.               ;llllll 
+ ;lllll;                clllllllllllll                ,lllll: 
+            .,;::,'      llllllllllll.     .,;:;,'            
+          ,lllllllll:     .llllllll;     ;lllllllll;          
+         ,llllllllllll                  ;llllllllllll         
+         :llllllllllll                  cllllllllllll         
+          lllllllllll'       ..'.       .lllllllllll'         
+           :llllllll      .colllll:,      :llllllll           
+                         :lllllllllll                         
+                        .llllllllllll;                        
+                         llllllllllll.                        
+                          clllllllll.                         
+                            .llll,                            "
+rand=$[$RANDOM % ${#arr[@]}]
+echo "${arr[$rand]}" | lolcat
+echo "$(tput setaf 1)â• ==========================================================â•£"
+echo "$(tput setaf 1)â• =================== Linux  Info+ =========================â•£"
+echo "$(tput setaf 1)â• ===================     v0.1     =========================â•£" 
+echo "$(tput setaf 1)â• ===================   Credits â†“     ======================â•£"
+echo "$(tput setaf 1)Adel, Manal Alammari, Zax, Alrapai, Aiman, Khalid, Maali, Abdulaziz  saud, Sarah Ali, Roaa, Bdoor Ali,Bedoor Alnasser, Gadh, Hesham Alshhafi, Mariam, A.Hafiz, Saraah Saleh, Faisal AlGhannam, Lina Omar, Hussain Alshaer, Sultana, Amal, Abdulhamid, Hesham, Abdullah Khaled, Omar,  Faisal Jaws, Amal Almansour, Monzer, Alaa Khalil, Asma, Afrah, Taghreed, Hesham, Alaa Khalili, Yaser, Amal Almunsour, Monzer, Alia, Abeer, Zahra'a, Amnah, Qamar, Fwaz, Hesnah, Wedad, Yasser, Albandri, Sara, Khloud, Wedad, Mohmmed Nashab, Amjad, Wedad, Abdullah Almalk, Fawaz, Maeeda, Ahmed, Reema, Khaled, Abdulbari, Saja Albayati, Eman, Dalal, Yaser, Abdulaziz Almalki, Nouf, Taif"  | lolcat
+echo "$(tput setaf 1)â•š==========================================================â•"
+echo ""
+
+
+while true; do
+echo "$(tput setaf 2)1. System Info"
+echo "2. RAM/CPU Info"
+echo "3. HD"
+echo "4. Users"
+echo "5. Who is online"
+echo
+
+echo -n "$(tput setaf 3)Enter your option, or 0 for exit: " ;tput sgr0
+read choice
+echo
+
+case $choice in
+     1)
+        echo "$(tput setaf 1)====================== System Info =============================";tput sgr0
+        echo -e "$(tput setaf 4)Hostname:\t\t$(tput setaf 6)"`hostname`;tput sgr0
+        echo -e "$(tput setaf 4)User:\t\t\t$(tput setaf 6)"`whoami`;tput sgr0
+        echo -e "$(tput setaf 4)uptime:\t\t\t$(tput setaf 6)"`uptime | awk '{print $3,$4}' | sed 's/,//'`;tput sgr0
+        echo -e "$(tput setaf 4)Manufacturer:\t\t$(tput setaf 6)"`cat /sys/class/dmi/id/chassis_vendor`;tput sgr0
+        echo -e "$(tput setaf 4)Product Name:\t\t$(tput setaf 6)"`cat /sys/class/dmi/id/product_name`;tput sgr0
+        echo -e "$(tput setaf 4)Serial Number:\t\t$(tput setaf 6)"`cat /sys/class/dmi/id/product_serial`;tput sgr0
+        echo -e "$(tput setaf 4)Machine Type:\t\t$(tput setaf 6)"`vserver=$(lscpu | grep Hypervisor | wc -l); if [ $vserver -gt 0 ]; then echo "VM"; else echo "Physical"; fi`;tput sgr0
+        echo -e "$(tput setaf 4)Operating System:\t$(tput setaf 6)"`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`;tput sgr0
+        echo -e "$(tput setaf 4)Kernel:\t\t\t$(tput setaf 6)"`uname -r`;tput sgr0
+        echo -e "$(tput setaf 4)Architecture:\t\t$(tput setaf 6)"`arch`;tput sgr0
+        echo -e "$(tput setaf 4)Processor Name:\t\t$(tput setaf 6)"`awk -F':' '/^model name/ {print $2}' /proc/cpuinfo | uniq | sed -e 's/^[ \t]*//'`;tput sgr0
+        echo -e "$(tput setaf 4)Active User:\t\t$(tput setaf 6)"`w | cut -d ' ' -f1 | grep -v USER | xargs -n1`;tput sgr0
+        echo -e "$(tput setaf 4)System Main IP:\t\t$(tput setaf 6)"`hostname -I`;tput sgr0
+        echo "$(tput setaf 1)================================================================";tput sgr0
+        echo ""
+        echo ""
+     ;;
+     2)
+        echo "$(tput setaf 1)====================== RAM/CPU Info =============================";tput sgr0
+        echo -e "Memory Usage:\t"`free | awk '/Mem/{printf("%.2f%"), $3/$2*100}'`
+        echo -e "Swap Usage:\t"`free | awk '/Swap/{printf("%.2f%"), $3/$2*100}'`
+        echo -e "CPU Usage:\t"`cat /proc/stat | awk '/cpu/{printf("%.2f%\n"), ($2+$4)*100/($2+$4+$5)}' |  awk '{print $0}' | head -1`
+        echo "$(tput setaf 1)================================================================";tput sgr0
+        echo ""
+        echo ""
+     ;;
+     3)
+        echo "$(tput setaf 1)====================== HD =============================";tput sgr0
+        df -H --output=source,size,used,avail | head -n1 
+        df -H --output=source,size,used,avail | grep --color=never "/dev"
+        echo "$(tput setaf 1)=======================================================";tput sgr0
+        echo ""
+        echo ""
+
+     ;;
+     4)
+        echo "$(tput setaf 1)====================== Users =============================";tput sgr0
+        column -s ':' -o ' | ' -t /etc/passwd | grep --color=never "/home"
+        echo "$(tput setaf 1)==========================================================";tput sgr0
+        echo ""
+        echo ""
+
+     ;;
+     5)
+        echo "$(tput setaf 1)====================== Who is Online? ==========================";tput sgr0
+        w
+        echo "$(tput setaf 1)================================================================";tput sgr0
+        echo ""
+        echo ""
+     ;;
+     6)
+id | lolcat
+     ;;
+
+     0)
+echo "
+.______   ____    ____  _______ 
+|   _  \  \   \  /   / |   ____|
+|  |_)  |  \   \/   /  |  |__   
+|   _  <    \_    _/   |   __|  
+|  |_)  |     |  |     |  |____ 
+|______/      |__|     |_______|
+                                
+" | lolcat
+     echo "$(tput setaf 2)Have a nice Day :)";tput sgr0
+     break
+     ;;
+     *)
+     echo "Erro, please select from 1-5, or select 0 to exit"
+     ;;
+esac  
+done
+     
